@@ -11,4 +11,73 @@ body {
     overflow-x: hidden;
     padding-top:50px;
     height: 100%;
+}
+
+.margin-seperator{
+    padding: 90px 0;
+}
+
+#top{
+    padding: 90px 0;
+}
+span {
+    font-weight: 700;
+}
+ul.game {
+    margin: auto;
+    padding: 0;
+    border: 1px solid #ffc107ed;
+    border-bottom: none;
+    width: 50%;
+}
+ul.game li {
+    margin: 0;
+    padding: 20px 0;
+    list-style: none;
+    border-bottom: 1px solid #ffc107;
+}
+.content-result {
+    padding-top: 60px;
+}
+button{
+    -webkit-box-shadow: 0 5px 3px 0 rgba(161,161,161,0.57);
+    -moz-box-shadow: 0 5px 3px 0 rgba(161,161,161,0.57);
+    box-shadow: 0 5px 3px 0 rgba(161,161,161,0.57);
+}
+
+.footer {
+    background: #717171;
+    z-index: 8;
+    padding-bottom: 10px;
+    position: relative;
+    font-size: .9rem;
+    &:before {
+      position: absolute;
+      left: 0;
+      content: '';
+      display: block;
+      width: 33.333334%;
+      height: 1em;
+      background-color: #ffc107;
+    }
+    li {
+      padding: .3rem 0;
+    }
+  }
+  
+  .footer-h5{
+    font-family: 'Old Standard TT', serif;
+    font-weight: bold;
+    font-size: 28px;
+  }
+  
+  .contact-footer{
+    font-family: 'Old Standard TT', serif;
+    font-weight: bold;
+    font-size:16px;
+  }
+  
+  .img-icons{
+    height: 100%;
+    width: auto;
   }

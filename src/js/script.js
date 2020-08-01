@@ -11,14 +11,9 @@
                 scrollTop: offset
             }, 1000);
             location.hash = target;
-        });
-        
+        });   
     });
-
-
 })(jQuery);
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
     let bodyElement = document.querySelector("body");
@@ -536,9 +531,81 @@ document.addEventListener("DOMContentLoaded", function () {
 		data.push(UserContact);
 		localStorage.setItem("Book", JSON.stringify(data));
 		console.log(data);
-	 }
-	
-
-
+     }
+     
 });
+
+
+//Storage section
+
+class Contact {
+	constructor(name, lastName, phone){
+		this.name = name;
+		this.lastName = lastName;
+		this.phone = phone;	
+	}	
+}
+function addUser(){
+	let name = document.querySelector("#name-storage").value;
+	let lastName = document.querySelector("#lastName-storage").value;
+	let phone = document.querySelector("#phone-storage").value;
+	
+	let contact = new Contact(name, lastName, phone);
+	
+	let dane = localStorage.getItem("Book");
+	
+	if(dane == null){
+		dane = [];
+	}else{
+		dane = JSON.parse(dane);
+	}
+	
+	dane.push(contact);
+	localStorage.setItem("Book", JSON.stringify(dane));
+	
+	showUsers();
+}
+
+function showUsers(){
+	
+	let daneJSON = localStorage.getItem("Book");
+	let dane = JSON.parse(daneJSON);
+	
+	let html = "<ul>"
+	let counter = 0;
+	
+	if(dane != null){
+		
+		for (let o of dane){
+			html += "<li>";
+				html += o.name+" "+o.lastName+" "+o.phone;
+				html += "<a href='#' onclick='delUser("+counter+")'>delete</a>";
+			html += "</li>"
+			counter++;
+		}
+
+		html += "</ul>";
+	}	
+	
+	document.querySelector("#showUsers").innerHTML = html;	
+	
+}
+
+function delUser(variable1){
+		
+	let daneJSON = localStorage.getItem("Book");
+	let dane = JSON.parse(daneJSON);
+	
+	dane.splice(variable1, 1);
+	
+	localStorage.setItem("Book", JSON.stringify(dane));
+	
+	showUsers();
+}
+
+function delAll(){
+	localStorage.clear();
+	showUsers();	
+}
+
 

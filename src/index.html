@@ -46,6 +46,12 @@
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="#game_5">Game 5</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#game_6">Game 6</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#game_7">Game 7</a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -147,6 +153,7 @@
                     </div>
                 </form>
             </div>
+            <div id="showUsers"></div>
             <div class="col-md-5 text-left">
                <button class="btn btn-secondary btnSend mt-5"></button>
                <button class="btn btn-secondary mt-5" onclick="addUser()">Save User</button>
@@ -158,6 +165,31 @@
                     <p id="text-result"></p>
 					<div id="showUsers"></div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="game_6" class="content-result margin-seperator">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center mb-5">
+                <h2><span>Storage </span><br/> exercises</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex flex-column">
+                <label>Name:</label><br/>
+                <input type='text' id='name-storage'>
+        
+                <label>Last Name:</label><br/>
+                <input type='text' id='lastName-storage'>
+            
+                <label>Phone:</label><br/>
+                <input type='text' id='phone-storage'>
+            </div>
+            <div class="col">
+                <button class="btn btn-secondary" onclick="addUser()">Save</button>
+                <button class="btn btn-secondary" onclick="delAll()">Delete all</button>
             </div>
         </div>
     </div>
@@ -182,8 +214,8 @@
             </div>
             <div class="row justify-content-end">
                 <p class="copyright text-center">
-                    &copy; Copyright 2020 Lorem Ipsum
-                    <span class="d-block">Designed and development by Lorem Ipsum</span>
+                    &copy; Copyright 2020 KG
+                    <span class="d-block">Designed and development by Web Development Kinga Górakowska</span>
                 </p>
             </div>
         </div>
